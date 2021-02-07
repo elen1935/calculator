@@ -7,8 +7,8 @@ function setUp() {
     console.log("set up");
     document.querySelector("#calculate").addEventListener("click", clickCalculate);
     document.querySelector("#clear").addEventListener("click", clickClear);
-    firstNumber(); //don't know if these would go here or in the clickCalculate function
-    secondNumber();
+    //firstNumber(); //don't know if these would go here or in the clickCalculate function
+    //secondNumber();
     // add event listener if click clear button -> clickClear()
 }
 
@@ -45,9 +45,55 @@ function readOperator() {
     //divide
 }
 
+/*
+const calculate = (n1, operator, n2) => {
+  let result = ''
+  
+  if (operator === 'add') {
+    result = n1 + n2
+  } else if (operator === 'subtract') {
+    result = n1 - n2
+  } else if (operator === 'multiply') {
+    result = n1 * n2
+  } else if (operator === 'divide') {
+    result = n1 / n2
+  }
+  
+  return result
+}
+
+
+const calculate = (n1, operator, n2) => {
+  let result = ''
+  
+  if (operator === 'add') {
+    result = parseFloat(n1) + parseFloat(n2)
+  } else if (operator === 'subtract') {
+    result = parseFloat(n1) - parseFloat(n2)
+  } else if (operator === 'multiply') {
+    result = parseFloat(n1) * parseFloat(n2)
+  } else if (operator === 'divide') {
+    result = parseFloat(n1) / parseFloat(n2)
+  }
+  
+  return result
+}
+*/
+
 function add() {
     console.log("add");
-    checkIfRoundingNeeded();
+    //select add symbol from dropdown
+    const add = document.querySelector("#operator").value = "add";
+
+    n1 = document.querySelector("#firstnumber");
+    n2 = document.querySelector("#secondnumber");
+
+    sum = parseInt(n1.value) + parseInt(n2.value);
+
+    result = document.querySelector("#firstnumber");
+    result.innerHTML = sum;
+
+    //checkIfRoundingNeeded();
 }
 
 function substract() {
