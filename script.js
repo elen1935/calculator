@@ -5,23 +5,34 @@ window.addEventListener('DOMContentLoaded', setUp);
 
 function setUp() {
     console.log("set up");
-    clickCalculate();
+    document.querySelector("#calculate").addEventListener("click", clickCalculate);
+    document.querySelector("#clear").addEventListener("click", clickClear);
+    firstNumber(); //don't know if these would go here or in the clickCalculate function
+    secondNumber();
     // add event listener if click clear button -> clickClear()
+}
+
+function firstNumber() {
+    console.log("read first number");
+    //const firstNumber = document.querySelector("#firstnumber").value;
+    var x = document.querySelector("#firstnumber").value;
+    document.querySelector("#firstnumber").innerHTML = x; //not sure if i need this line, not sure if it does anything
+    /*
+    var x = document.getElementById("myInput").value;
+    document.getElementById("demo").innerHTML = "You wrote: " + x;
+    */
+    secondNumber(); //?
+}
+
+function secondNumber() {
+    console.log("read second number");
+    var y = document.querySelector("#secondnumber").value;
+    document.querySelector("#secondnumber").innerHTML = y; //not sure if i need this
+    clickCalculate();
 }
 
 function clickCalculate() {
     console.log("click calculate");
-    readFirstNumber();
-}
-
-function readFirstNumber() {
-    console.log("read first number");
-    const firstNumber = document.querySelector("#firstnumber").value;
-    readSecondNumber();
-}
-
-function readSecondNumber() {
-    console.log("read second number");
     readOperator();
 }
 
@@ -56,13 +67,14 @@ function divide() {
 
 function checkIfRoundingNeeded() {
     console.log("check if rounding is needed");
-    not.value but.checked; //boolean
+    //not.value but.checked; //boolean
 
+    readDecimalsNumber()
     //if rounding -> read number of decimals -> round result -> showResult()
     //else -> showResult()
 }
 
-funcstion readDecimalsNumber() {
+function readDecimalsNumber() {
     console.log("read number of decimals");
     roundResult();
 }
@@ -75,15 +87,13 @@ function roundResult() {
 function showResult() {
     console.log("show result");
     // append result to end of list - is it another function?
-    scrollListBottom;
+    scrollListBottom();
 }
 
 function scrollListBottom() {
     console.log("scroll list to the bottom");
     document.querySelector("#results").scrollTo(0,1000000);
 }
-
-
 
 
 
@@ -95,3 +105,4 @@ function clickClear() {
 function clearResultsList() {
     console.log("clear results list");
 }
+
